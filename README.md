@@ -1,8 +1,6 @@
 # TokenRabbit
 GUI tool to Assign Secure Token to a user under 10.13
 
-NOTE: A precompiled version is not available at this time.  Download the project, open in Xcode, and build.
-
 This tool will allow you to enter the name of an administrator with SecureToken assigned, then grant SecureToken to another user. 
 
 Benefits:
