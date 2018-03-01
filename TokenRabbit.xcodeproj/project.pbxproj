@@ -12,6 +12,7 @@
 		7D345D2620483ED7002B8BAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D345D2520483ED7002B8BAA /* Assets.xcassets */; };
 		7D345D2920483ED7002B8BAA /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D345D2720483ED7002B8BAA /* MainMenu.xib */; };
 		7D345D2C20483ED7002B8BAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D345D2B20483ED7002B8BAA /* main.m */; };
+		7D6F260E204898F400477F3A /* tr256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D6F260D204898F400477F3A /* tr256.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		7D345D2820483ED7002B8BAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		7D345D2A20483ED7002B8BAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D345D2B20483ED7002B8BAA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7D6F260D204898F400477F3A /* tr256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tr256.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				7D345D2720483ED7002B8BAA /* MainMenu.xib */,
 				7D345D2A20483ED7002B8BAA /* Info.plist */,
 				7D345D2B20483ED7002B8BAA /* main.m */,
+				7D6F260D204898F400477F3A /* tr256.png */,
 			);
 			path = TokenRabbit;
 			sourceTree = "<group>";
@@ -133,6 +136,7 @@
 			files = (
 				7D345D2620483ED7002B8BAA /* Assets.xcassets in Resources */,
 				7D345D2920483ED7002B8BAA /* MainMenu.xib in Resources */,
+				7D6F260E204898F400477F3A /* tr256.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +278,7 @@
 				DEVELOPMENT_TEAM = G95YF369FG;
 				INFOPLIST_FILE = TokenRabbit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = edu.mit.ll.TokenRabbit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -288,6 +293,7 @@
 				DEVELOPMENT_TEAM = G95YF369FG;
 				INFOPLIST_FILE = TokenRabbit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = edu.mit.ll.TokenRabbit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
