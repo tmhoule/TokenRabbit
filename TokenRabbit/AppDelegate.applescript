@@ -47,7 +47,7 @@ script AppDelegate
         end try
         
         set adminSTStatus to do shell script "sysadminctl -adminUser " & adminUser & " -adminPassword " & adminPW &  " -secureTokenStatus " & adminUser & " 2>&1 " & adminUser user name (adminUser as string) password (adminPW as string) with administrator privileges
-        
+        --DEBUG set adminSTStatus to "yes its ENABLED"
         --display dialog adminSTStatus
         
         if adminSTStatus contains "ENABLED"
@@ -75,25 +75,27 @@ script AppDelegate
             do shell script "/System/Library/CoreServices/ManagedClient.app/Contents/Resources/createmobileaccount -n " & targetUser user name (targetUser as string) password (targetPW as string) with administrator privileges
         end try
         
-        set xSTStatus to do shell script "sysadminctl -adminUser " & adminUser & " -adminPassword " & adminPW &  " -secureTokenStatus " & targetUser & " 2>&1 " & adminUser user name (adminUser as string) password (adminPW as string) with administrator privileges
+        --DONT CARE IF USER HAS TOKEN - IT MAY BE INVALID. WILL REMOVE TOKEN BEFORE ASSIGNING
+        --set xSTStatus to do shell script "sysadminctl -adminUser " & adminUser & " -adminPassword " & adminPW &  " -secureTokenStatus " & targetUser & " 2>&1 " & adminUser user name (adminUser as string) password (adminPW as string) with administrator privileges
         
-        if xSTStatus contains "ENABLED"
-            set my userStatus to "❌"
-            set my userSTText to "SecureToken Already Enabled"
-            set my userEnabled to true
-        else if xSTStatus contains "DISABLED"
-           --display dialog  "Currently, " & targetUser & " does not have SecureToken Enabled."
+        --if xSTStatus contains "ENABLED"
+        --    set my userStatus to "❌"
+        --    set my userSTText to "SecureToken Already Enabled"
+        --    set my userEnabled to true
+        --else if xSTStatus contains "DISABLED"
+        --   display dialog  "Currently, " & targetUser & " does not have SecureToken Enabled."
            set my userStatus to "✔️"
            set my userSTText to ""
-        else
-            display dialog "Couldn't get status of SecureToken for " & adminUser & ". Does user have an account on this computer?"
-        end if
+        --else
+        --    display dialog "Couldn't get status of SecureToken for " & adminUser & ". Does user have an account on this computer?"
+        --end if
 
     end checkDoesUserHaveST_
 
     on checkUserNamePW_(sender)
+
         try
-            do shell script "touch /tmp/test$$" user name (targetUser as string) password (targetPW as string) with administrator privileges
+            do shell script ("dscl /Local/Default authonly " & targetUser as string & " " & targetPW as string)
             set my userPWStatus to "✔️"
             set my userStatus to "✔️"
             set my userEnabled to false
@@ -105,10 +107,30 @@ script AppDelegate
         checkDoesUserHaveST_(1)
     end checkUserNamePW_
 
+
     on assignToken_(sender)
+        theWindow's makeFirstResponder_(theWindow)
+
+        if enabledAdmins is not false
+            display dialog "ERROR: Verify Admin name and password before assigning token." buttons "OK" default button 1
+            return
+        end if
+
+        if userEnabled is not false
+            display dialog "ERROR: Verify Target User's name and password before assigning token." buttons "OK" default button 1
+            return
+        end if
+
+        try
+            do shell script "sysadminctl -adminUser " & adminUser & " -adminPassword " & adminPW &  " -secureTokenOff " & targetUser & " -password " &  targetPW & " 2>&1 " & adminUser user name (adminUser as string) password (adminPW as string) with administrator privileges
+        end try
         try
             set doSTStatus to do shell script "sysadminctl -adminUser " & adminUser & " -adminPassword " & adminPW &  " -secureTokenOn " & targetUser & " -password " &  targetPW & " 2>&1 " & adminUser user name (adminUser as string) password (adminPW as string) with administrator privileges
             set my userSTText to "SecureToken Enabled"
+            try
+                do shell script "diskutil apfs updatePreboot /" user name (adminUser as string) password (adminPW as string) with administrator privileges
+            end try
+            
             display dialog "Secure Token Assigned!" buttons "Quit" default button 1
             tell me to quit
         on error

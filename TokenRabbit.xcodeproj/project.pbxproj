@@ -13,7 +13,24 @@
 		7D345D2920483ED7002B8BAA /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D345D2720483ED7002B8BAA /* MainMenu.xib */; };
 		7D345D2C20483ED7002B8BAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D345D2B20483ED7002B8BAA /* main.m */; };
 		7D6F260E204898F400477F3A /* tr256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D6F260D204898F400477F3A /* tr256.png */; };
+		7DA78737209233F300388E52 /* ChangeLog.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7DA78736209233F300388E52 /* ChangeLog.rtf */; };
+		7DA78739209246A400388E52 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 7DA78738209246A400388E52 /* dsa_pub.pem */; };
+		7DAD20B52090C36B00196DC1 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DAD20B42090C36B00196DC1 /* Sparkle.framework */; };
+		7DAD20B72090C4E700196DC1 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7DAD20B42090C36B00196DC1 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7DAD20B62090C4D400196DC1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7DAD20B72090C4E700196DC1 /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7D345D1D20483ED7002B8BAA /* TokenRabbit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TokenRabbit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,6 +41,9 @@
 		7D345D2A20483ED7002B8BAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D345D2B20483ED7002B8BAA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7D6F260D204898F400477F3A /* tr256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tr256.png; sourceTree = SOURCE_ROOT; };
+		7DA78736209233F300388E52 /* ChangeLog.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = ChangeLog.rtf; sourceTree = "<group>"; };
+		7DA78738209246A400388E52 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = SOURCE_ROOT; };
+		7DAD20B42090C36B00196DC1 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +52,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D345D2120483ED7002B8BAA /* AppleScriptObjC.framework in Frameworks */,
+				7DAD20B52090C36B00196DC1 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +79,7 @@
 		7D345D1F20483ED7002B8BAA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7DAD20B42090C36B00196DC1 /* Sparkle.framework */,
 				7D345D2020483ED7002B8BAA /* AppleScriptObjC.framework */,
 			);
 			name = Frameworks;
@@ -66,12 +88,14 @@
 		7D345D2220483ED7002B8BAA /* TokenRabbit */ = {
 			isa = PBXGroup;
 			children = (
+				7DA78738209246A400388E52 /* dsa_pub.pem */,
 				7D345D2320483ED7002B8BAA /* AppDelegate.applescript */,
 				7D345D2520483ED7002B8BAA /* Assets.xcassets */,
 				7D345D2720483ED7002B8BAA /* MainMenu.xib */,
 				7D345D2A20483ED7002B8BAA /* Info.plist */,
 				7D345D2B20483ED7002B8BAA /* main.m */,
 				7D6F260D204898F400477F3A /* tr256.png */,
+				7DA78736209233F300388E52 /* ChangeLog.rtf */,
 			);
 			path = TokenRabbit;
 			sourceTree = "<group>";
@@ -86,6 +110,7 @@
 				7D345D1920483ED7002B8BAA /* Sources */,
 				7D345D1A20483ED7002B8BAA /* Frameworks */,
 				7D345D1B20483ED7002B8BAA /* Resources */,
+				7DAD20B62090C4D400196DC1 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -134,9 +159,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DA78739209246A400388E52 /* dsa_pub.pem in Resources */,
 				7D345D2620483ED7002B8BAA /* Assets.xcassets in Resources */,
 				7D345D2920483ED7002B8BAA /* MainMenu.xib in Resources */,
 				7D6F260E204898F400477F3A /* tr256.png in Resources */,
+				7DA78737209233F300388E52 /* ChangeLog.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,9 +303,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = G95YF369FG;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = TokenRabbit/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks $(inherited)";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = edu.mit.ll.TokenRabbit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -291,9 +322,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = G95YF369FG;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = TokenRabbit/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks $(inherited)";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = edu.mit.ll.TokenRabbit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
