@@ -52,7 +52,7 @@ script AppDelegate
         try
         set my adminUser to item 1 of mySTusers
         on error
-            display dialog "No SecureToken users found. (Was this machine upgraded from 10.12? Token status is hidden on those machines) Either any user can enable filevault or no user can." buttons "Quit" default button 1 with icon 2
+            display dialog "No SecureToken users found. (Was this machine upgraded from 10.12? Token status is hidden on those machines) Either any user can enable filevault or no user can. Please enable filevault and then come back to this app." buttons "Quit" default button 1 with icon 2
             tell me to quit
             --set my mySTUsers to userList
         end try
