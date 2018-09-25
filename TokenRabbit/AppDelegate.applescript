@@ -28,7 +28,8 @@ script AppDelegate
 		-- Create list of users with SecureToken
         set users to (do shell script "dscl . read /Groups/admin GroupMembership")
         set AppleScript's text item delimiters to " "
-        set userList to every text item of users as list
+        set userList1 to every text item of users as list
+        set userList to items 2 thru -1 of userList1
         set mySTusers to {}
         repeat with oneUser in userList
             set hasToken to ""
@@ -42,7 +43,12 @@ script AppDelegate
                 set my mySTusers to mySTusers & oneUser
             end if
         end repeat
+        try
         set my adminUser to item 1 of mySTusers
+        on error
+            display dialog "No SecureToken users found. (Was this machine upgraded from 10.12? Token status is hidden on those machines) You can try with an admin user, but assignment may fail." buttons "OK" default button 1 with icon 2
+            set my mySTUsers to userList
+        end try
 
 	end applicationWillFinishLaunching_
 	
