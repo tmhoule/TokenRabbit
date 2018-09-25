@@ -24,6 +24,12 @@ script AppDelegate
 	-- IBOutlets
 	property theWindow : missing value
 	
+    
+    --NOTES
+    --    bash-3.2# diskutil apfs listCryptoUsers /
+    --    No cryptographic users for disk1s1
+
+    
 	on applicationWillFinishLaunching_(aNotification)
 		-- Create list of users with SecureToken
         set users to (do shell script "dscl . read /Groups/admin GroupMembership")
@@ -46,8 +52,9 @@ script AppDelegate
         try
         set my adminUser to item 1 of mySTusers
         on error
-            display dialog "No SecureToken users found. (Was this machine upgraded from 10.12? Token status is hidden on those machines) You can try with an admin user, but assignment may fail." buttons "OK" default button 1 with icon 2
-            set my mySTUsers to userList
+            display dialog "No SecureToken users found. (Was this machine upgraded from 10.12? Token status is hidden on those machines) Either any user can enable filevault or no user can." buttons "Quit" default button 1 with icon 2
+            tell me to quit
+            --set my mySTUsers to userList
         end try
 
 	end applicationWillFinishLaunching_
