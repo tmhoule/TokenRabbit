@@ -16,6 +16,18 @@
 		7DA78737209233F300388E52 /* ChangeLog.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7DA78736209233F300388E52 /* ChangeLog.rtf */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		7D1526BD215BB66500D76F56 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		7D345D1D20483ED7002B8BAA /* TokenRabbit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TokenRabbit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D345D2020483ED7002B8BAA /* AppleScriptObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptObjC.framework; path = System/Library/Frameworks/AppleScriptObjC.framework; sourceTree = SDKROOT; };
@@ -89,6 +101,7 @@
 				7D345D1920483ED7002B8BAA /* Sources */,
 				7D345D1A20483ED7002B8BAA /* Frameworks */,
 				7D345D1B20483ED7002B8BAA /* Resources */,
+				7D1526BD215BB66500D76F56 /* CopyFiles */,
 			);
 			buildRules = (
 			);
